@@ -1,12 +1,11 @@
 interface ProductPageProps {
-    params: Promise<{ id: string }>;
+    params: { id: string };
 }
 
-export default async function ProductPage({ params }: ProductPageProps) {
-    const { id } = await params;
+export default  function ProductPage({ params }: ProductPageProps) {
     return (
         <main>
-            <h1>Product ID: {id}</h1>
+            <h1>Product ID: {params.id}</h1>
             <p>Product details will load here</p>
         </main>
     );
